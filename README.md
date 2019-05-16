@@ -51,6 +51,7 @@ Vue.use(Chat)
       :newMessagesCount="newMessagesCount"
       :isOpen="isChatOpen"
       :close="closeChat"
+      :Icons="Icons"
       :open="openChat"
       :showEmoji="true"
       :showFile="true"
@@ -67,6 +68,19 @@ export default {
   name: 'app',
   data() {
     return {
+    
+      Icons:{
+              Open:{
+                img: '/images/logo.svg',
+                name: 'default',
+
+              },
+              Close:{
+                 img: '/images/logo.svg',
+                 name: 'default',
+
+               },
+          },
       participants: [
         {
           id: 'user1',
