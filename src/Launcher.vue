@@ -4,8 +4,8 @@
       <div v-if="newMessagesCount > 0 && !isOpen" class="sc-new-messsages-count">
         {{newMessagesCount}}
       </div>
-      <img class="sc-open-icon" src="./assets/close-icon.png" />
-      <img class="sc-closed-icon" src="./assets/logo-no-bg.svg" />
+      <img class="sc-open-icon" :src="Icons.Open.img"  :alt="Icons.Open.name" />
+      <img class="sc-closed-icon" :src="Icons.Close.img"  :alt="Icons.Open.name" />
     </div>
     <ChatWindow
       :messageList="messageList"
@@ -32,6 +32,26 @@ import ChatWindow from './ChatWindow.vue'
 
 export default {
   props: {
+    Icons:{
+
+      type: Object,
+
+      default: function () {
+        return {
+
+            Open:{
+              img: './assets/close-icon.png',
+              name: 'default',
+
+            },
+            Close:{
+               img: './assets/close-icon.png',
+               name: 'default',
+
+             },
+        }
+      }
+    },
     showEmoji: {
       type: Boolean,
       default: false
